@@ -4,15 +4,12 @@ using namespace std;
 
 template <class T> class Tree;
 template <class T>
-
 class TreeNode{
 	friend class Tree<T>;
 
 public:
 	TreeNode(const T &d)
 		: data(d), leftptr(0), rightptr(0){}
-
-
 private:
 	T data;
 	TreeNode<T> *leftptr;
@@ -32,7 +29,7 @@ public:
 	bool find(T value);
 	int get_height();
 	void m_delete(T data);
-	~Tree();
+	~Tree();//destructor
 
 private:
 	TreeNode<T> *rootPtr;
@@ -110,7 +107,8 @@ void Tree<T>::inOrderTraversal() const {
 template <class T>
 void Tree<T>::inOrderHelper(TreeNode< T>* ptr)const {
 	{
-		if (ptr != NULL){
+		if (ptr != NULL)
+		{
 
 			inOrderHelper(ptr->leftptr);
 			cout << ptr->data << " ";
@@ -130,7 +128,8 @@ void Tree<T>::postOrderTraversal() const{
 template <class T>
 void Tree<T>::postOrderHelper(TreeNode< T>* ptr)const {
 	{
-		if (ptr != NULL){
+		if (ptr != NULL)
+		{
 
 			postOrderHelper(ptr->leftptr);
 			postOrderHelper(ptr->rightptr);
@@ -149,7 +148,8 @@ int Tree<T>::get_height(){
 
 template <class T>
 int Tree<T>::get_heightHelper(TreeNode<T> *ptr){
-	if (ptr == NULL){
+	if (ptr == NULL)
+	{
 		return 0;
 	}
 	return max(get_heightHelper(ptr->leftptr), get_heightHelper(ptr->rightptr)) + 1;
@@ -256,7 +256,8 @@ void Tree<T>::removeSubTree(TreeNode<T> *root){
 }
 
 
-
+//I just wrote this function for readable code, when I return bool in find function, just pass here to be written properly
+//weather value was found or not
 template <class T>
 void writeFind(bool find, T value){
 	if (find == 1){
