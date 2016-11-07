@@ -2,6 +2,7 @@
 #include <algorithm>
 using namespace std;
 
+//.........CLASS TREENODE........
 template <class T> class Tree;
 template <class T>
 class TreeNode{
@@ -18,6 +19,7 @@ private:
 
 };
 
+//.........CLASS TREE.............
 template <class T>
 class Tree{
 public:
