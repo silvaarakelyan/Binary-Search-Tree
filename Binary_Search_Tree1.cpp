@@ -274,11 +274,11 @@ int main(){
 		//After insertion my tree must look like this
 		//          60
 		//         /  \
-			    //       20   70
+                //       20   70
 		//      / \ 
 		//    10  40 
 		//       / \
-			    //      30 50
+		//      30 50
 
 
 		Tree<int> t;
